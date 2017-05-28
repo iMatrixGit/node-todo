@@ -1,0 +1,9 @@
+export const REMOVE_TODO = 'REMOVE_TODO';
+export const CONSUME_TODOS = 'CONSUME_TODOS';
+export const FETCH_TODOS = 'FETCH_TODOS';
+export const INPUT_TODO_TEXT = 'INPUT_TODO_TEXT';
+export const SUBMIT_TODO = 'SUBMIT_TODO';
+export const DONE_TODO = 'DONE_TODO';
+export const UNDONE_TODO = 'UNDONE_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const CLEAR_TODO_INPUT = 'CLEAR_TODO_INPUT';
