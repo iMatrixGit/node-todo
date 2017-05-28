@@ -8,7 +8,7 @@ import {
     leaveChat,
     sendChatMessage
 } from '../actions/chat';
-import { FormInput, Button } from '../components';
+import { FormInput, Button, ChatMessages } from '../components';
 
 class ChatContainer extends Component {
     constructor() {
@@ -97,22 +97,16 @@ class ChatContainer extends Component {
         )
     }
 
-    renderChatMessage(message, index) {
-        return (
-            <div key={index}>
-                <div style={{ color: '#999', fontStyle: 'italic' }}>{message.get('author')}</div>
-                <div>{message.get('message')}</div>
-            </div>
-        )
-    }
-
     renderChatWindow() {
-        const { messages, messageInputValue } = this.props;
+        const { username, messages, messageInputValue } = this.props;
 
         return (
             <div>
                 <h3>Chat messages</h3>
-                <div>{ messages.map(this.renderChatMessage) }</div>
+                <ChatMessages
+                    username={username}
+                    messages={messages}
+                />
                 <div>
                     <FormInput
                         type="text"

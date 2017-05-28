@@ -65,3 +65,46 @@ h1 {
 .scrollable-list:hover .scroll-thumb {
     opacity: 1;
 }
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    min-width: 50px;
+    max-width: 350px;
+    margin-bottom: 10px;
+}
+
+.chat-message-right {
+    align-self: flex-end;
+}
+
+.chat-message-text {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background: #dee7e7;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.chat-message-right .chat-message-title {
+    text-align: right;
+}
+
+.chat-message-right .chat-message-text {
+    background: #bbeaea;
+}
+
+.chat-message-left {
+    align-self: flex-start;
+}
+
+.chat-message-title {
+    color: #999;
+    font-style: italic;
+}
