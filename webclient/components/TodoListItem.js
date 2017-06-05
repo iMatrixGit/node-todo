@@ -1,8 +1,12 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import classNames from 'classnames';
 import { Button } from '.';
 
-export default class TodoListItem extends Component {
+const TodoListItemText = ({ text }) => (
+    <div className="todo-list-item-text">{text}</div>
+);
+
+export default class TodoListItem extends PureComponent {
     constructor() {
         super();
 
@@ -35,7 +39,7 @@ export default class TodoListItem extends Component {
                 style={style}
                 onClick={this.onClick}
             >
-                <div className="todo-list-item-text">{title}</div>
+                <TodoListItemText text={title} />
                 <Button
                     className="delete-button"
                     text="Remove"

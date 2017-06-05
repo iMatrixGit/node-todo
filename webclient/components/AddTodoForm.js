@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import { FormInput, Button } from '.';
 
-export default class AddTodoForm extends Component {
+export default class AddTodoForm extends PureComponent {
     constructor() {
         super();
 

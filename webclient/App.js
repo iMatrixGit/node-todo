@@ -15,17 +15,6 @@ import {
 const history = createBrowserHistory();
 
 export default class App extends Component {
-    componentWillMount() {
-        //const socket = io('http://localhost:3000');
-
-        //socket.on('connect', () => console.log('Connected!'));
-        //socket.on('disconnect', () => console.log('Disconnected!'));
-        //socket.on('custom-event', id => console.log(`${id}, has connected`));
-        //socket.emit('welcome', 'Hello friends!');
-
-        //socket.on('welcome-too', msg => console.log(msg));
-    }
-
     render() {
         return (
             <Router history={history}>
