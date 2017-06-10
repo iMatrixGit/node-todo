@@ -2,9 +2,9 @@ import { forEachObjIndexed } from 'ramda';
 
 const base = 'http://localhost:3000';
 
-const decorateService = ({ url, method, headers }) =>
+const decorateService = ({ url, method, headers, credentials }) =>
     ({ params, body } = {}) => {
-        const req = { method, headers };
+        const req = { method, headers, credentials };
         let targetUrl = url;
 
         if (params) {
@@ -31,12 +31,14 @@ const services = [
         url: `${base}/api/todos`,
         method: 'GET',
         headers: { 'Accept': 'application/json' },
+        credentials: 'same-origin',
         name: 'getTodos'
     },
     {
         url: `${base}/api/todos/:username`,
         method: 'GET',
         headers: { 'Accept': 'application/json' },
+        credentials: 'same-origin',
         name: 'getUserTodos'
     },
     {
@@ -46,7 +48,8 @@ const services = [
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        name: 'addTodo'
+        credentials: 'same-origin',
+        name: 'addTodo',
     },
     {
         url: `${base}/api/todo/:id`,
@@ -55,12 +58,14 @@ const services = [
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        name: 'editTodo'
+        credentials: 'same-origin',
+        name: 'editTodo',
     },
     {
         url: `${base}/api/todo/:id`,
         method: 'DELETE',
         headers: { 'Accept': 'application/json' },
+        credentials: 'same-origin',
         name: 'removeTodo'
     },
     {
@@ -70,6 +75,7 @@ const services = [
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
+        credentials: 'same-origin',
         name: 'register'
     },
     {
@@ -79,6 +85,7 @@ const services = [
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
+        credentials: 'same-origin',
         name: 'login'
     },
     {
@@ -87,6 +94,7 @@ const services = [
         headers: {
             'Accept': 'application/json',
         },
+        credentials: 'same-origin',
         name: 'getChatMessages'
     }
 ];
